@@ -1,0 +1,22 @@
+@()
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<title>Login</title>
+</head>
+<body>
+@main("Hospital") {
+  <h1>Bienvenido Usuario</h1>
+  <div>
+  	<h3>Usuario<input type="input" name="usuario"></h3>
+    <h3>Contraseña<input type="password" name="pass"></h3>
+	<!--- No envía a ningún lado --->
+  	<button type="submit" formaction="@routes.HomeController."> Entrar</a></button>
+  </div>
+  <div class="contenedor">
+  	<!--- Direcciona al registro de Usuarios--->
+  	<a href="@routes.UserController.listUsers">¿Aún no estás registrado? ¡Registrate ahora!</a>
+  </div>
+}
+</body>
+</html>

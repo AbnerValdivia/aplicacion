@@ -1,0 +1,21 @@
+@import play.mvc.Http.Request
+@(users:Seq[User])(implicit request:Request, messages: play.i18n.Messages)
+
+@main("Users") {
+  <h1>Usuario Creado</h1>
+  <div>
+	<table>
+	    <thead>
+	        <tr><th>Nombre</th><th>Apellidos</th><th>Username</th><th>Email</th><th>Tipo</th></tr>
+	    </thead>
+	    <tbody>
+	    @for(w <- users) {
+	        <tr><td>@w.nombre</td><td>@w.apellidos</td><td>@w.username</td><td>@w.email</td><td>@w.tipo</td></tr>
+	    }
+	    </tbody>
+	</table>
+  </div>
+  <div>
+  	<button type="button"><a href="@routes.UserController.createUser"> Registrar otro usuario</a></button>
+  </div>
+}
